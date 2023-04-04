@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Charu",
+      "adderss": "Kundapura",
+      "email": "Charu@gmail.com",
+      "contact": "9731452671"
+    },
+    {
+      "id": 2,
+      "name": "Gopi",
+      "adderss": "Bangalore",
+      "email": "gopi@gmail.com",
+      "contact": "7829190134"
+    },
+    {
+      "id": 3,
+      "name": "Manu",
+      "adderss": "Chikkamagaluru",
+      "email": "manu@gmail.com",
+      "contact": "5683929012"
+    }
+  ]
+}
