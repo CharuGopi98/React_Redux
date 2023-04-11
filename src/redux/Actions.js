@@ -12,6 +12,12 @@ const deleteuser = (id) => {
     type: types.DELETE_USER,
   };
 };
+
+const adduser = () => {
+  return {
+    type: types.ADD_USER,
+  };
+};
 export const loadUsers = () => {
   return (dispatch) => {
     axios
@@ -32,5 +38,17 @@ export const deleteUser = (id) => {
       dispatch(deleteuser());
       dispatch(loadUsers());
     });
+  };
+};
+
+export const addUser = () => {
+  return (dispatch) => {
+    axios
+      .post("  http://localhost:5000/user")
+      .then((res) => {
+        console.log(res);
+        dispatch(adduser());
+      })
+      .catch((error) => console.log(error));
   };
 };

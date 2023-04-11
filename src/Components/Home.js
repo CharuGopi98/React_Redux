@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, loadUsers } from "../redux/Actions";
 import { Button, ButtonGroup } from "@mui/material";
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AddUser from "../Components/AddUser";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -33,17 +33,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-//const rows = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
 export default function Home() {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.Data);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     dispatch(loadUsers());
@@ -59,12 +52,14 @@ export default function Home() {
       <Button
         variant="contained"
         color="inherit"
-        onClick={() => {}}
         sx={{ marginLeft: "650px", mt: "10px" }}
+        onClick={() => {
+          navigate("Adduser");
+        }}
       >
         Add User
       </Button>
-      <AddUser />
+
       <TableContainer component={Paper} sx={{ mt: "50px" }}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>

@@ -17,6 +17,11 @@ const userReducer = (state = initialState, action) => {
         ...state,
         loading: false,
       };
+    case types.ADD_USER:
+      return {
+        ...state,
+        loading: false,
+      };
 
     default:
       return state;
