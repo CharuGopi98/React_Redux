@@ -87,6 +87,7 @@ export default function Home() {
                     style={{ marginRight: "5px" }}
                     variant="contained"
                     color="inherit"
+                    onClick={() => navigate(`/edituser/:${user.id}`)}
                   >
                     Edit
                   </Button>

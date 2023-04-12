@@ -24,10 +24,12 @@ const AddUser = () => {
   };
 
   const submitUser = (e) => {
+    debugger;
     e.preventDefault();
     if (!name || !address || !email || !contact) {
       setError("Please enter all input fields!!");
     } else {
+      debugger;
       dispatch(addUser(values));
       navigate("/");
       setError("");
@@ -39,6 +41,7 @@ const AddUser = () => {
       <Card>
         <h2>ADD USER</h2>
         {error && <h5 style={{ color: "red" }}>{error}</h5>}
+        <h2>{values.address}</h2>
         <form
           style={{
             marginLeft: "50px",

@@ -41,10 +41,11 @@ export const deleteUser = (id) => {
   };
 };
 
-export const addUser = () => {
+export const addUser = (user) => {
   return (dispatch) => {
+    debugger;
     axios
-      .post("  http://localhost:5000/user")
+      .post("  http://localhost:5000/user", user)
       .then((res) => {
         console.log(res);
         dispatch(adduser());
